@@ -69,7 +69,7 @@ fi
 echo " "
 echo "-------------------------------------------------------------------------------------"
 echo "====> : Pulling or refreshing OpenMapTiles docker images "
-make refresh-docker-images
+#make refresh-docker-images
 
 
 #####  backup log from here ...
@@ -269,7 +269,8 @@ echo "      :  "
 echo "      : You will see a lot of deprecated warning in the log! This is normal!  "
 echo "      :    like :  Mapnik LOG>  ... is deprecated and will be removed in Mapnik 4.x ... "
 
-docker-compose -f docker-compose.yml -f ./data/docker-compose-config.yml  run --rm generate-vectortiles
+#docker-compose -f docker-compose.yml -f ./data/docker-compose-config.yml  run --rm generate-vectortiles
+docker-compose -f docker-compose.yml run --rm generate-vectortiles
 
 echo " "
 echo "-------------------------------------------------------------------------------------"
@@ -291,8 +292,8 @@ md5sum build/tileset.sql                      >> ./data/quickstart_checklist.chk
 md5sum build/openmaptiles.tm2source/data.yml  >> ./data/quickstart_checklist.chk
 md5sum ./data/${testdata}                     >> ./data/quickstart_checklist.chk
 md5sum ./data/tiles.mbtiles                   >> ./data/quickstart_checklist.chk
-md5sum ./data/docker-compose-config.yml       >> ./data/quickstart_checklist.chk
-md5sum ./data/osmstat.txt                     >> ./data/quickstart_checklist.chk
+#md5sum ./data/docker-compose-config.yml       >> ./data/quickstart_checklist.chk
+#md5sum ./data/osmstat.txt                     >> ./data/quickstart_checklist.chk
 cat ./data/quickstart_checklist.chk
 
 ENDTIME=$(date +%s)

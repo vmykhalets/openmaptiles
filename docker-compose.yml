@@ -118,9 +118,14 @@ services:
     environment:
       #BBOX: "8.25,46.97,9.58,47.52"
       #BBOX: "5.97,45.75,10.7,47.72"
-      BBOX: ${BBOX}
-      MIN_ZOOM: ${MIN_ZOOM}
-      MAX_ZOOM: ${MAX_ZOOM}
+      BBOX: " 13.4285022, 36.3852967, 56.0369675, 56.9060947"
+      OSM_MAX_TIMESTAMP : "2017-07-01T20:43:29Z"
+      OSM_AREA_NAME: "ukraine"
+      MIN_ZOOM: "7"
+      MAX_ZOOM: "14"
+#      BBOX: ${BBOX}
+#      MIN_ZOOM: ${MIN_ZOOM}
+#      MAX_ZOOM: ${MAX_ZOOM}
   postserve:
     image: "openmaptiles/postserve:0.2"
     env_file: .env
